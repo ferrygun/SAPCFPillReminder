@@ -32,9 +32,9 @@ function CheckStatus() {
   var options;
   var sendstatus;
   var threshold = 1*60*1000;
-  var URL= 'https://appnode-demo-p528034trial.cfapps.eu10.hana.ondemand.com/webhook';
-  var username = 'ferrygun@yahoo.com';
-  var password = 'Papamama18';
+  var URL= 'https://appnode-demo-pxxxxtrial.cfapps.eu10.hana.ondemand.com/webhook';
+  var username = 'SAP_CLOUD_FOUNDRY_USER_ID';
+  var password = 'SAP_CLOUD_FOUNDRY_USER_PASSWORD';
   
   for(n=2;n<=log.getLastRow();++n){ 
  
@@ -69,31 +69,4 @@ function CheckStatus() {
         break;
     }
   }
-}
-
-function myFunction() {
-  var URL= 'https://appnode-demo-p528034trial.cfapps.eu10.hana.ondemand.com/webhook';
-  var username = 'ferrygun@yahoo.com';
-  var password = 'Papamama18';
-  
-  var options;
-    
-  payload = {
-      "message" : 'FD'
-  };
-  
-  var headers = {
-    "Authorization" : "Basic " + Utilities.base64Encode(username + ':' + password)
-  };
-  
-  options = {
-      "method"  : "POST",
-      "headers": headers,
-      "payload" : payload,   
-      "followRedirects" : true,
-      "muteHttpExceptions": true
-    };
-  
-  var reponse = UrlFetchApp.fetch(URL, options);
-  Logger.log(reponse);
 }
